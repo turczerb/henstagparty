@@ -15,7 +15,10 @@ const NavBar = () => {
           <a href="/">Program</a>
         </div>
         <div>
-          <a href="/">Login</a>
+          <a href="/">Upload pic at xy</a>
+        </div>
+        <div>
+          <a href="/">Logout</a>
         </div>
       </nav>
     </div>
