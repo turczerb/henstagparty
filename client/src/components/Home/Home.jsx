@@ -1,4 +1,3 @@
-import NavBar from "../NavBar/NavBar";
 import Login from "../Login/Login";
 import DetailsContainer from "../Details/DetailsContainer";
 import ProgramsContainer from "../Programs/ProgramsContainer";
@@ -9,7 +8,6 @@ import Whatsapp from "../WhatsApp/Whatsapp";
 const Home = () => {
   return (
     <div>
-      <NavBar />
       <Login />
       <CountDown />
       <DetailsContainer />
