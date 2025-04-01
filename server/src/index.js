@@ -2,12 +2,17 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import { adminRouter } from "./routes/admin.jsx";
+import { userRouter } from "./routes/user.jsx";
 
 const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(cors()); // CORS engedélyezése
 app.use(express.json()); // JSON body parser middleware
+
+app.use("/auth_admin", adminRouter);
+app.use("/auth_user", userRouter);
 
 mongoose.connect(
   "mongodb+srv://turczerb:fUNQqohhUtKAijll@henparty.bhmh9m3.mongodb.net/henparty?retryWrites=true&w=majority&appName=henparty"
