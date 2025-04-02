@@ -5,4 +5,7 @@ import bcrypt from "bcrypt";
 //kezeli a kereseket get,put,post,delete s az app.js vagy index.js nem zsufolt.
 
 const router = express.Router();
+
+router.post("login");
+
 export { router as adminRouter };
