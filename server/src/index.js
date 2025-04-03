@@ -17,7 +17,8 @@ app.use("/auth_user", userRouter);
 app.use("/data", dataRouter);
 
 mongoose.connect(
-  "mongodb+srv://turczerb:fUNQqohhUtKAijll@henparty.bhmh9m3.mongodb.net/henparty?retryWrites=true&w=majority&appName=henparty"
+  //"mongodb+srv://turczerb:fUNQqohhUtKAijll@henparty.bhmh9m3.mongodb.net/henparty?retryWrites=true&w=majority&appName=henparty"
+  "mongodb+srv://turczerb:fUNQqohhUtKAijll@henparty.bhmh9m3.mongodb.net/henstageapp?retryWrites=true&w=majority&appName=henstageapp"
 );
 
 // Szerver indítása
