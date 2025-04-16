@@ -2,17 +2,19 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import { adminRouter } from "./routes/admin.js";
+import dotenv from "dotenv";
+//import { adminRouter } from "./routes/admin.js";
 import { userRouter } from "./routes/user.js";
 import { dataRouter } from "./routes/data.js";
 
+dotenv.config(); // Környezeti változók betöltése
 const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(cors()); // CORS engedélyezése
 app.use(express.json()); // JSON body parser middleware
 
-app.use("/auth_admin", adminRouter);
+//app.use("/auth_admin", adminRouter);
 app.use("/auth_user", userRouter);
 app.use("/data", dataRouter);
 
