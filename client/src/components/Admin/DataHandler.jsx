@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 const AdminData = () => {
-  const [navBarData, setNavBarData] = useState([]);
-
   return (
     <div>
       <form>
