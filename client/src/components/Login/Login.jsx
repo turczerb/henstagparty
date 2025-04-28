@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [_, setCookies] = useCookies(["access_token"]);
-  const [userName, setUserName] = useState("");
+  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
-  const [redirect, setRedirect] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -30,12 +30,14 @@ const Login = () => {
       const response = await axios.post(
         "http://localhost:3001/auth_user/login",
         {
-          userName,
+          username,
           password,
         }
       );
+      console.log(response); // Check the response
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
+      window.localStorage.setItem("isAdmin", response.data.isAdmin);
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -48,7 +50,7 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <input
           placeholder="username"
-          value={userName}
+          value={username}
           onChange={handleUsernameChange}
         ></input>
         <input
@@ -57,8 +59,9 @@ const Login = () => {
           value={password}
           onChange={handlePasswordChange}
         ></input>
-        <button type="submit">login</button>
-        <Link to="/admin_login">admin login</Link>
+        <button type="submit" disabled={username && password ? false : true}>
+          login
+        </button>
       </form>
     </div>
   );

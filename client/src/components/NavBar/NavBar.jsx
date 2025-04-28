@@ -1,4 +1,27 @@
+import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const NavBar = () => {
+  const [cookies, setCookies] = useCookies(["access_token"]);
+  const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    setCookies("access_token", "");
+    window.localStorage.removeItem("userID");
+    navigate("/");
+  };
+
+  useEffect(() => {
+    if (cookies.access_token) {
+      setVisible(true); // Show logout when the user is logged in
+    } else {
+      setVisible(false); // Hide logout when the user is not logged in
+    }
+  }, [cookies.access_token]);
+
   return (
     <div>
       <nav>
@@ -17,9 +40,11 @@ const NavBar = () => {
         <div>
           <a href="/">Upload pic at xy</a>
         </div>
-        <div>
-          <a href="/">Logout</a>
-        </div>
+        {visible && cookies.access_token ? (
+          <button onClick={logout}>Logout</button>
+        ) : (
+          <></>
+        )}
       </nav>
     </div>
   );
