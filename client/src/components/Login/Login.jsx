@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [_, setCookies] = useCookies(["access_token"]);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
   const [redirect, setRedirect] = useState(false);
+
+  const navigate = useNavigate();
 
   //e.target.value gives you the current text the user has entered.
   //When a user types into the input, the onChange event is triggered,
@@ -20,6 +26,20 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); //stops the page to reload.we dont need that.
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/auth_user/login",
+        {
+          userName,
+          password,
+        }
+      );
+      setCookies("access_token", response.data.token);
+      window.localStorage.setItem("userID", response.data.userID);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
   //When you press the button inside a
   //<form> (and the button is of type submit), the onSubmit function will run.
