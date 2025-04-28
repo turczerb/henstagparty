@@ -5,15 +5,19 @@ import Footer from "../Footer/Footer";
 import CountDown from "../CountDown/CountDown";
 import Whatsapp from "../WhatsApp/Whatsapp";
 
-const Home = () => {
+const Home = ({ isLoggedIn, onLoginSuccess }) => {
   return (
     <div>
-      <Login />
+      {!isLoggedIn && <Login onLoginSuccess={onLoginSuccess} />}
       <CountDown />
-      <DetailsContainer />
-      <ProgramsContainer />
-      <Whatsapp />
-      <Footer />
+      {isLoggedIn && (
+        <>
+          <DetailsContainer />
+          <ProgramsContainer />
+          <Whatsapp />
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ onLoginSuccess }) => {
   const [_, setCookies] = useCookies(["access_token"]);
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -39,6 +39,7 @@ const Login = () => {
       window.localStorage.setItem("userID", response.data.userID);
       window.localStorage.setItem("isAdmin", response.data.isAdmin);
       navigate("/");
+      onLoginSuccess();
     } catch (err) {
       console.log(err);
     }
