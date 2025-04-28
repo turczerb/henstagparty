@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+//sztem ez torolheto lesz. egy feluletrol lesz a login kezelve.
 const AdminLogin = () => {
   return (
     <div>
