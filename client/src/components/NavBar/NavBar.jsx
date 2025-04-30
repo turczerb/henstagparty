@@ -4,23 +4,24 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ onLogout }) => {
-  const [cookies, setCookies] = useCookies(["access_token"]);
+  const [cookies, setCookies, removeCookie] = useCookies([
+    "access_token",
+    "userID",
+    "logged_in",
+  ]);
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
   const logout = () => {
-    setCookies("access_token", "");
-    window.localStorage.removeItem("userID");
+    removeCookie("access_token");
+    removeCookie("userID");
+    removeCookie("logged_in");
     onLogout(); // ez visszaállítja az isLoggedIn állapotot is false-ra az App-ban
     navigate("/");
   };
 
   useEffect(() => {
-    if (cookies.access_token) {
-      setVisible(true); // Show logout when the user is logged in
-    } else {
-      setVisible(false); // Hide logout when the user is not logged in
-    }
+    setVisible(!!cookies.access_token);
   }, [cookies.access_token]);
 
   return (

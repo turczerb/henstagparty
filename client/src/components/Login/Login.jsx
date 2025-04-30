@@ -27,17 +27,19 @@ const Login = ({ onLoginSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault(); //stops the page to reload.we dont need that.
     try {
-      const response = await axios.post(
-        "http://localhost:3001/auth_user/login",
-        {
-          username,
-          password,
-        }
-      );
-      console.log(response); // Check the response
-      setCookies("access_token", response.data.token);
-      window.localStorage.setItem("userID", response.data.userID);
-      window.localStorage.setItem("isAdmin", response.data.isAdmin);
+      const result = await axios.post("http://localhost:3001/auth_user/login", {
+        username,
+        password,
+      });
+      console.log(result); // Check the response
+      setCookies("access_token", result.data.token);
+      setCookies("userID", result.data.userID);
+      setCookies("logged_in", true);
+      //window.localStorage.setItem("access_token", result.data.token); // Tárolás localStorage-ban
+      //window.localStorage.setItem("userID", result.data.userID);
+      //window.localStorage.setItem("isAdmin", result.data.isAdmin);
+      // Ellenőrzés, hogy tényleg bekerültek-e az adatok a localStorage-ba
+
       navigate("/");
       onLoginSuccess();
     } catch (err) {
