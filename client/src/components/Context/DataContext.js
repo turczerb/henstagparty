@@ -6,12 +6,18 @@ export const DataProvider = ({ children }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // Ide jön a fetch
-    fetch("http://localhost:3001/data") // vagy fetchData()
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/data");
+        const result = await response.json();
+        setData(result); // Beállítjuk az adatokat
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
+    fetchData();
+  }, []);
   return (
     <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
   );

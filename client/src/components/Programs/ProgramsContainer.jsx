@@ -1,11 +1,14 @@
 import ProgramCard from "../Programs/ProgramCard";
+import { useData } from "../Context/DataContext";
+import styled from "styled-components"; //css
 
 const ProgramsContainer = () => {
+  const { data } = useData();
   return (
     <div>
-      progikat visszaa adja
+      progikat visszaa adjak
       <div>
-        <ProgramCard />
+        <ProgramCard data={data} />
       </div>
     </div>
   );

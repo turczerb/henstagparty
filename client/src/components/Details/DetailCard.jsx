@@ -1,4 +1,5 @@
 import styled from "styled-components"; //css
+
 const DetailCardContainer = styled.div`
   color: rgba(176, 146, 89, 1);
   max-width: 800px;
