@@ -3,6 +3,7 @@ import DetailsContainer from "../Details/DetailsContainer";
 import ProgramsContainer from "../Programs/ProgramsContainer";
 import Footer from "../Footer/Footer";
 import CountDown from "../CountDown/CountDown";
+import MainInfo from "../MainInfo/MainInfo";
 import Whatsapp from "../WhatsApp/Whatsapp";
 import styled from "styled-components"; //css
 
@@ -28,6 +29,7 @@ const Home = ({ isLoggedIn, onLoginSuccess }) => {
 
       {isLoggedIn && (
         <>
+          <MainInfo />
           <DetailsContainer />
           <ProgramsContainer />
           <Whatsapp />
