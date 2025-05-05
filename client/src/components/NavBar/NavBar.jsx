@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components"; //css
+
+const NavBarOut = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: none;
+  padding: 1rem;
+`;
 
 const NavBar = ({ onLogout }) => {
   const [visible, setVisible] = useState(false);
@@ -23,7 +34,7 @@ const NavBar = ({ onLogout }) => {
   const isAdmin = JSON.parse(localStorage.getItem("isAdmin")) === true;
 
   return (
-    <nav>
+    <NavBarOut>
       <div>
         <div>
           <div>
@@ -45,7 +56,7 @@ const NavBar = ({ onLogout }) => {
           {visible && <button onClick={logout}>Logout</button>}
         </div>
       </div>
-    </nav>
+    </NavBarOut>
   );
 };
 

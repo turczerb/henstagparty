@@ -29,6 +29,33 @@ const StyledForm = styled.form`
   }
 `;
 
+const StyledInput = styled.input`
+  border-radius: 7px;
+  height: 20px;
+`;
+
+const StyledButton = styled.button`
+  height: 40px; /* Gomb magassága */
+  width: 100%; /* Gomb szélességét is 100%-ra állítjuk */
+  background-color: #d2a679; /* Pezsgő szín */
+  background-color: rgba(176,146,89,1)
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #b58a59; /* Sötétebb szín hover állapotban */
+  }
+
+  &:disabled {
+    background-color: #ccc; /* Disable gomb szín */
+    cursor: not-allowed;
+  }
+`;
+
 const Login = ({ onLoginSuccess }) => {
   const [_, setCookies] = useCookies(["access_token"]);
   const [username, setUserName] = useState("");
@@ -79,20 +106,23 @@ const Login = ({ onLoginSuccess }) => {
   return (
     <FirstContainer>
       <StyledForm onSubmit={handleSubmit}>
-        <input
+        <StyledInput
           placeholder="username"
           value={username}
           onChange={handleUsernameChange}
-        ></input>
-        <input
+        ></StyledInput>
+        <StyledInput
           placeholder="password"
           type="password"
           value={password}
           onChange={handlePasswordChange}
-        ></input>
-        <button type="submit" disabled={username && password ? false : true}>
+        ></StyledInput>
+        <StyledButton
+          type="submit"
+          disabled={username && password ? false : true}
+        >
           login
-        </button>
+        </StyledButton>
       </StyledForm>
     </FirstContainer>
   );
