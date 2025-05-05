@@ -8,8 +8,12 @@ import Whatsapp from "../WhatsApp/Whatsapp";
 const Home = ({ isLoggedIn, onLoginSuccess }) => {
   return (
     <div>
+      <div>
+        {" "}
+        <CountDown />
+      </div>
       {!isLoggedIn && <Login onLoginSuccess={onLoginSuccess} />}
-      <CountDown />
+
       {isLoggedIn && (
         <>
           <DetailsContainer />

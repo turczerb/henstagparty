@@ -29,4 +29,15 @@ router.post("/", async (req, res) => {
     res.json(err);
   }
 });
+
+//save we need the put req
+router.put("/", async (req, res) => {
+  try {
+    const response = await theadata.save();
+    res.json(response);
+  } catch (err) {
+    res.json(err);
+  }
+});
+
 export { router as dataRouter };

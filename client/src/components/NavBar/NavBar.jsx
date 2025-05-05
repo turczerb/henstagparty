@@ -23,27 +23,29 @@ const NavBar = ({ onLogout }) => {
   const isAdmin = JSON.parse(localStorage.getItem("isAdmin")) === true;
 
   return (
-    <div>
-      <nav>
+    <nav>
+      <div>
         <div>
-          <a href="/">Home</a>
+          <div>
+            <a href="/">Home</a>
+          </div>
+          <div>
+            <a href="/">Details</a>
+          </div>
+          <div>
+            <a href="/">Getting there</a>
+          </div>
+          <div>
+            <a href="/">Program</a>
+          </div>
+          <div>
+            <a href="/">Upload pic at xy</a>
+          </div>
+          <div>{isAdmin && <button>Szerkesztés</button>}</div>
+          {visible && <button onClick={logout}>Logout</button>}
         </div>
-        <div>
-          <a href="/">Details</a>
-        </div>
-        <div>
-          <a href="/">Getting there</a>
-        </div>
-        <div>
-          <a href="/">Program</a>
-        </div>
-        <div>
-          <a href="/">Upload pic at xy</a>
-        </div>
-        <div>{isAdmin && <button>Szerkesztés</button>}</div>
-        {visible && <button onClick={logout}>Logout</button>}
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 

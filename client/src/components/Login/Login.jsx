@@ -3,6 +3,31 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components"; //css
+
+const FirstContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledForm = styled.form`
+  display: grid;
+  gap: 0.4rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    input,
+    button {
+      font-size: 0.95rem;
+    }
+  }
+`;
 
 const Login = ({ onLoginSuccess }) => {
   const [_, setCookies] = useCookies(["access_token"]);
@@ -52,8 +77,8 @@ const Login = ({ onLoginSuccess }) => {
   //When you press the button inside a
   //<form> (and the button is of type submit), the onSubmit function will run.
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <FirstContainer>
+      <StyledForm onSubmit={handleSubmit}>
         <input
           placeholder="username"
           value={username}
@@ -68,8 +93,8 @@ const Login = ({ onLoginSuccess }) => {
         <button type="submit" disabled={username && password ? false : true}>
           login
         </button>
-      </form>
-    </div>
+      </StyledForm>
+    </FirstContainer>
   );
 };
 
