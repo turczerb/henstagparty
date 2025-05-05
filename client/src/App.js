@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar/NavBar";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import Home from "./components/Home/Home";
+import { DataProvider } from "./components/Context/DataContext";
+
 import styled from "styled-components"; //css
 
 const Hatterkep = styled.div`
@@ -40,16 +42,21 @@ function App() {
   return (
     <Hatterkep>
       <div>{isLoggedIn && <NavBar onLogout={handleLogout} />}</div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home isLoggedIn={isLoggedIn} onLoginSuccess={handleLoginSuccess} />
-          }
-        />
+      <DataProvider>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                isLoggedIn={isLoggedIn}
+                onLoginSuccess={handleLoginSuccess}
+              />
+            }
+          />
 
-        <Route path="/data_upload" element={<DataHandler />} />
-      </Routes>
+          <Route path="/data_upload" element={<DataHandler />} />
+        </Routes>
+      </DataProvider>
     </Hatterkep>
   );
 }

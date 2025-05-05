@@ -1,11 +1,17 @@
 import DetailCard from "./DetailCard";
+import { useData } from "../Context/DataContext";
 
 const DetailsContainer = () => {
+  const { data } = useData();
+
   return (
     <div>
-      tartalmazza a detail cardokat
       <div>
-        <DetailCard />
+        <h1>The details</h1>
+      </div>
+
+      <div>
+        <DetailCard data={data} />
       </div>
     </div>
   );
