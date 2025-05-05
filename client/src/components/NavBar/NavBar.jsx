@@ -4,21 +4,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ onLogout }) => {
-  /*const [cookies, setCookies, removeCookie] = useCookies([
-    "access_token",
-    "userID",
-    "logged_in",
-    "isAdmin",
-  ]);*/
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
   const logout = () => {
-    /*removeCookie("access_token");
-    removeCookie("userID");
-    removeCookie("logged_in");
-    removeCookie("isAdmin");*/
-
     localStorage.removeItem("access_token");
     localStorage.removeItem("userID");
     localStorage.removeItem("isAdmin");
@@ -26,9 +15,6 @@ const NavBar = ({ onLogout }) => {
     navigate("/");
   };
 
-  /*useEffect(() => {
-    setVisible(!!cookies.access_token);
-  }, [cookies.access_token]);*/
   useEffect(() => {
     const token = localStorage.getItem("access_token");
     setVisible(!!token); // If token exists, show the navbar and logout button
