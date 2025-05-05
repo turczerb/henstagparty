@@ -10,9 +10,14 @@ function App() {
   const [cookies] = useCookies(["access_token"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false); //we are not logged in
 
-  useEffect(() => {
+  /* useEffect(() => {
     setIsLoggedIn(!!cookies.access_token);
-  }, [cookies.access_token]);
+  }, [cookies.access_token]);*/
+
+  useEffect(() => {
+    const token = localStorage.getItem("access_token");
+    setIsLoggedIn(!!token);
+  }, []);
 
   const handleLoginSuccess = () => {
     setIsLoggedIn(true); // if login goed the state changes to true.

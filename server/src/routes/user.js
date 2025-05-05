@@ -25,8 +25,8 @@ router.post("/login", async (req, res) => {
   }
 
   // if is correct--> start the login process with token
-  const token = jwt.sign({ id: user._id }, "secret");
-  res.json({ token, userID: user._id });
+  const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, "secret");
+  res.json({ token, userID: user._id, isAdmin: user.isAdmin });
 });
 
 export { router as userRouter };

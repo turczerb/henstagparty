@@ -4,25 +4,37 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ onLogout }) => {
-  const [cookies, setCookies, removeCookie] = useCookies([
+  /*const [cookies, setCookies, removeCookie] = useCookies([
     "access_token",
     "userID",
     "logged_in",
-  ]);
+    "isAdmin",
+  ]);*/
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
   const logout = () => {
-    removeCookie("access_token");
+    /*removeCookie("access_token");
     removeCookie("userID");
     removeCookie("logged_in");
+    removeCookie("isAdmin");*/
+
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("userID");
+    localStorage.removeItem("isAdmin");
     onLogout(); // ez visszaállítja az isLoggedIn állapotot is false-ra az App-ban
     navigate("/");
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     setVisible(!!cookies.access_token);
-  }, [cookies.access_token]);
+  }, [cookies.access_token]);*/
+  useEffect(() => {
+    const token = localStorage.getItem("access_token");
+    setVisible(!!token); // If token exists, show the navbar and logout button
+  }, []);
+
+  const isAdmin = JSON.parse(localStorage.getItem("isAdmin")) === true;
 
   return (
     <div>
@@ -42,11 +54,8 @@ const NavBar = ({ onLogout }) => {
         <div>
           <a href="/">Upload pic at xy</a>
         </div>
-        {visible && cookies.access_token ? (
-          <button onClick={logout}>Logout</button>
-        ) : (
-          <></>
-        )}
+        <div>{isAdmin && <button>Szerkesztés</button>}</div>
+        {visible && <button onClick={logout}>Logout</button>}
       </nav>
     </div>
   );
