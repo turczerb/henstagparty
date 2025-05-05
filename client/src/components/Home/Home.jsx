@@ -6,17 +6,18 @@ import CountDown from "../CountDown/CountDown";
 import Whatsapp from "../WhatsApp/Whatsapp";
 import styled from "styled-components"; //css
 
-const LoginSurface = styled.div`
-  min-height: 100vh;
-  background-image: url("/victor01052.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+const LoginSurface = styled.div``;
+
+const Conti = styled.div`
+  padding-top: 70px; // kb. a NavBar magassága
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Home = ({ isLoggedIn, onLoginSuccess }) => {
   return (
-    <div>
+    <Conti>
       <LoginSurface>
         <div>
           {" "}
@@ -33,7 +34,7 @@ const Home = ({ isLoggedIn, onLoginSuccess }) => {
           <Footer />
         </>
       )}
-    </div>
+    </Conti>
   );
 };
 

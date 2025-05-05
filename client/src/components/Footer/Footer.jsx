@@ -1,8 +1,12 @@
+import styled from "styled-components"; //css
+
+const FooterContainer = styled.div``;
+
 const Footer = () => {
   return (
-    <div>
+    <FooterContainer>
       <h1>Zsofi & Mate 2025&copy;</h1>
-    </div>
+    </FooterContainer>
   );
 };
 

@@ -10,11 +10,56 @@ const NavBarOut = styled.nav`
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: none;
   padding: 1rem;
+  color: white;
+`;
+
+const NavContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Menu = styled.ul`
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1rem;
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+  }
+`;
+
+const Hamburger = styled.div`
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background: white;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `;
 
 const NavBar = ({ onLogout }) => {
+  const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -35,27 +80,45 @@ const NavBar = ({ onLogout }) => {
 
   return (
     <NavBarOut>
-      <div>
-        <div>
-          <div>
+      <NavContent>
+        <h3 style={{ color: "white" }}>Zsófi & Máté</h3>
+
+        {/* Hamburger ikon – csak mobilon látszik */}
+        <Hamburger onClick={() => setOpen(!open)}>
+          <span />
+          <span />
+          <span />
+        </Hamburger>
+
+        {/* Menü lista – mobilon ki-be csúszik */}
+        <Menu open={open}>
+          <li>
             <a href="/">Home</a>
-          </div>
-          <div>
+          </li>
+          <li>
             <a href="/">Details</a>
-          </div>
-          <div>
+          </li>
+          <li>
             <a href="/">Getting there</a>
-          </div>
-          <div>
+          </li>
+          <li>
             <a href="/">Program</a>
-          </div>
-          <div>
+          </li>
+          <li>
             <a href="/">Upload pic at xy</a>
-          </div>
-          <div>{isAdmin && <button>Szerkesztés</button>}</div>
-          {visible && <button onClick={logout}>Logout</button>}
-        </div>
-      </div>
+          </li>
+          {isAdmin && (
+            <li>
+              <button>Szerkesztés</button>
+            </li>
+          )}
+          {visible && (
+            <li>
+              <button onClick={logout}>Logout</button>
+            </li>
+          )}
+        </Menu>
+      </NavContent>
     </NavBarOut>
   );
 };
