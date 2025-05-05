@@ -7,17 +7,20 @@ import styled from "styled-components"; //css
 const NavBarOut = styled.nav`
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   z-index: 1000;
   padding: 1rem;
   color: white;
+  box-sizing: border-box;
 `;
 
 const NavContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 `;
 
 const Menu = styled.ul`
@@ -32,8 +35,10 @@ const Menu = styled.ul`
     position: fixed;
     top: 70px;
     left: 0;
-    width: 100%;
+    width: 40%;
     background: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     padding: 1rem;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
     transition: transform 0.3s ease-in-out;
@@ -46,11 +51,13 @@ const Hamburger = styled.div`
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
+  z-index: 1001;
 
   span {
     width: 25px;
     height: 3px;
     background: white;
+    border-radius: 2px;
   }
 
   @media (max-width: 768px) {
