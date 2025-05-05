@@ -65,6 +65,11 @@ const Hamburger = styled.div`
   }
 `;
 
+const NavButtons = styled.a`
+  color: rgba(176, 146, 89, 1);
+  text-decoration: none;
+`;
+
 const NavBar = ({ onLogout }) => {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -100,19 +105,19 @@ const NavBar = ({ onLogout }) => {
         {/* Menü lista – mobilon ki-be csúszik */}
         <Menu open={open}>
           <li>
-            <a href="/">Home</a>
+            <NavButtons href="/">Home</NavButtons>
           </li>
           <li>
-            <a href="/">Details</a>
+            <NavButtons href="/">Details</NavButtons>
           </li>
           <li>
-            <a href="/">Getting there</a>
+            <NavButtons href="/">Getting there</NavButtons>
           </li>
           <li>
-            <a href="/">Program</a>
+            <NavButtons href="/">Program</NavButtons>
           </li>
           <li>
-            <a href="/">Upload pic at xy</a>
+            <NavButtons href="/">Upload pic at xy</NavButtons>
           </li>
           {isAdmin && (
             <li>

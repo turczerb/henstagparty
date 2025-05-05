@@ -17,18 +17,21 @@ const FirstContainer = styled.div`
 
   h1 {
     font-size: 2.5rem;
+    color: rgba(176, 146, 89, 1);
   }
 
   h2 {
     font-size: 1.5rem;
+    color: rgba(176, 146, 89, 1);
   }
 
   button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background-color: #008000;
-    color: white;
-    border: none;
+    border-style: solid;
+    border-color: rgba(176, 146, 89, 1);
+    color: rgba(176, 146, 89, 1);
+
     border-radius: 8px;
     cursor: pointer;
   }
