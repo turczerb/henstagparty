@@ -32,7 +32,7 @@ const Home = ({ isLoggedIn, onLoginSuccess }) => {
           <MainInfo />
           <DetailsContainer />
           <ProgramsContainer />
-          <Whatsapp />
+
           <Footer />
         </>
       )}
