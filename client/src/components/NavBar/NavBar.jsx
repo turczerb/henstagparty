@@ -113,13 +113,13 @@ const NavBar = ({ onLogout }) => {
         {/* Menü lista – mobilon ki-be csúszik */}
         <Menu open={open}>
           <li>
-            <NavButtons href="/">Home</NavButtons>
+            <NavButtons href="#home">Home</NavButtons>
           </li>
           <li>
-            <NavButtons href="/">Details</NavButtons>
+            <NavButtons href="#details">Details</NavButtons>
           </li>
           <li>
-            <NavButtons href="/">Program</NavButtons>
+            <NavButtons href="#program">Program</NavButtons>
           </li>
           <li>
             <NavButtons href="https://photos.app.goo.gl/kM5bBo5cSXswpyvMA">

@@ -14,11 +14,11 @@ const Title = styled.h1`
   font-size: 2rem;
 `;
 
-const DetailsContainer = () => {
+const DetailsContainer = ({ id }) => {
   const { data } = useData();
 
   return (
-    <FirstContainer>
+    <FirstContainer id={id}>
       <Title>The details</Title>
 
       <DetailCard data={data} />

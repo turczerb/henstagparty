@@ -29,9 +29,9 @@ const Home = ({ isLoggedIn, onLoginSuccess }) => {
 
       {isLoggedIn && (
         <>
-          <MainInfo />
-          <DetailsContainer />
-          <ProgramsContainer />
+          <MainInfo id="home" />
+          <DetailsContainer id="details" />
+          <ProgramsContainer id="program" />
 
           <Footer />
         </>

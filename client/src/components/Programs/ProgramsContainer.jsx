@@ -2,10 +2,10 @@ import ProgramCard from "../Programs/ProgramCard";
 import { useData } from "../Context/DataContext";
 import styled from "styled-components"; //css
 
-const ProgramsContainer = () => {
+const ProgramsContainer = ({ id }) => {
   const { data } = useData();
   return (
-    <div>
+    <div id={id}>
       progikat visszaa adjakkk
       <div>
         <ProgramCard data={data} />
