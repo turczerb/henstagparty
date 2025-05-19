@@ -117,7 +117,9 @@ const NavBar = ({ onLogout }) => {
             <NavButtons href="/">Program</NavButtons>
           </li>
           <li>
-            <NavButtons href="/">Upload pic at xy</NavButtons>
+            <NavButtons href="https://photos.app.goo.gl/kM5bBo5cSXswpyvMA">
+              Upload pic at GooglePhotos
+            </NavButtons>
           </li>
           {isAdmin && (
             <li>

@@ -6,7 +6,7 @@ const ProgramsContainer = () => {
   const { data } = useData();
   return (
     <div>
-      progikat visszaa adjak
+      progikat visszaa adjakkk
       <div>
         <ProgramCard data={data} />
       </div>

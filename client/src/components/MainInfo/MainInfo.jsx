@@ -63,7 +63,7 @@ const MainInfo = () => {
         <h1>Zsofi and Mate</h1>
       </div>
       <div>
-        <h2>joyfully invite you to their hen and stage party!</h2>
+        <h2>joyfully invite you to their hen and stag party!</h2>
       </div>
       <div>
         <h2>July 22, 2025</h2>

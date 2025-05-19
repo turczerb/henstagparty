@@ -20,7 +20,7 @@ const RealCountdown = styled.div`
 
 const DataSpan = styled.span``;
 
-const COUNTDOWN_TARGET = new Date("2025-06-22T10:00:00"); // will come from database.
+const COUNTDOWN_TARGET = new Date("2025-07-22T10:00:00"); // will come from database.
 
 const getTimeLeft = () => {
   const totalTimeLeft = COUNTDOWN_TARGET - new Date(); // mennyi van vissza azt megkapjuk ha kivonjuk az aktualis datumot a kituzottbol
