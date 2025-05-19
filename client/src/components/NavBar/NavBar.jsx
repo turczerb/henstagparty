@@ -3,6 +3,7 @@ import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"; //css
+import { TbLogout } from "react-icons/tb";
 
 const NavBarOut = styled.nav`
   position: fixed;
@@ -75,6 +76,13 @@ const NavBar = ({ onLogout }) => {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
+  const Loghandle = styled.li`
+    color: rgba(176, 146, 89, 1);
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+  `;
+
   const logout = () => {
     localStorage.removeItem("access_token");
     localStorage.removeItem("userID");
@@ -111,14 +119,11 @@ const NavBar = ({ onLogout }) => {
             <NavButtons href="/">Details</NavButtons>
           </li>
           <li>
-            <NavButtons href="/">Getting there</NavButtons>
-          </li>
-          <li>
             <NavButtons href="/">Program</NavButtons>
           </li>
           <li>
             <NavButtons href="https://photos.app.goo.gl/kM5bBo5cSXswpyvMA">
-              Upload pic at GooglePhotos
+              Google Photos
             </NavButtons>
           </li>
           {isAdmin && (
@@ -127,9 +132,10 @@ const NavBar = ({ onLogout }) => {
             </li>
           )}
           {visible && (
-            <li>
-              <button onClick={logout}>Logout</button>
-            </li>
+            <Loghandle>
+              <TbLogout onClick={logout} />
+              Logout
+            </Loghandle>
           )}
         </Menu>
       </NavContent>
