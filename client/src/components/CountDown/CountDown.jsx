@@ -31,7 +31,7 @@ const getTimeLeft = () => {
   return { days, hours, minutes, sec };
 };
 
-const CountDown = () => {
+const CountDown = ({ id }) => {
   const [timeLeft, setTimeLeft] = useState(() => getTimeLeft());
 
   //setup a timer that will update in every second
@@ -49,7 +49,7 @@ const CountDown = () => {
 
   return (
     <div>
-      <CountDownContainer>
+      <CountDownContainer id={id}>
         <h2>Countdown 'til our amazing Party!</h2>
       </CountDownContainer>
 

@@ -22,14 +22,14 @@ const Home = ({ isLoggedIn, onLoginSuccess }) => {
       <LoginSurface>
         <div>
           {" "}
-          <CountDown />
+          <CountDown id="home" />
         </div>
         {!isLoggedIn && <Login onLoginSuccess={onLoginSuccess} />}
       </LoginSurface>
 
       {isLoggedIn && (
         <>
-          <MainInfo id="home" />
+          <MainInfo />
           <DetailsContainer id="details" />
           <ProgramsContainer id="program" />
 
