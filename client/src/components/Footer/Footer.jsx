@@ -19,13 +19,22 @@ const Footertext = styled.h2`
 const UpIcon = styled(IoMdArrowUp)`
   font-size: 2rem;
   cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-4px); /* kis lebegés hatás */
+  }
 `;
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <FooterContainer>
       <div>
-        <UpIcon />
+        <UpIcon onClick={scrollToTop} aria-label="Ugrás a lap tetejére" />
       </div>
       <Footertext>Zsófi & Máte 2025&copy;</Footertext>
     </FooterContainer>
