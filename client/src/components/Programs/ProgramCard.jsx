@@ -8,15 +8,19 @@ const ProgramCard = ({ data }) => {
 
   return (
     <div>
-      {data.map((item, index) => (
-        <div key={index}>
-          <div>
-            <h2>{item.time}</h2>
-            <p>{item.prog_location}</p>
-            <p>{item.activity}</p>
-          </div>
+      <div>
+        <div>
+          {data[0].program.map((item, index) => (
+            <div key={index}>
+              <div>
+                <h2>{item.time}</h2>
+                <p>{item.prog_location}</p>
+                <p>{item.activity}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

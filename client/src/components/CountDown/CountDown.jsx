@@ -6,6 +6,7 @@ const CountDownContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 30px;
+  color: rgba(176, 146, 89, 1);
 `;
 
 const RealCountdown = styled.div`
@@ -16,6 +17,7 @@ const RealCountdown = styled.div`
   color: black;
   font-size: 20px;
   font-weight: bold;
+  color: rgba(176, 146, 89, 1);
 `;
 
 const DataSpan = styled.span``;

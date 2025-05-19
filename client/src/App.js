@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import Home from "./components/Home/Home";
 import { DataProvider } from "./components/Context/DataContext";
+import "react-vertical-timeline-component/style.min.css";
 
 import styled from "styled-components"; //css
 
