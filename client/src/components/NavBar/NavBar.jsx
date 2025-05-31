@@ -126,6 +126,9 @@ const NavBar = ({ onLogout }) => {
               Google Photos
             </NavButtons>
           </li>
+          <li>
+            <NavButtons href="#frames">Frames</NavButtons>
+          </li>
           {isAdmin && (
             <li>
               <button>Szerkesztés</button>

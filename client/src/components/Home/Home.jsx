@@ -4,6 +4,7 @@ import ProgramsContainer from "../Programs/ProgramsContainer";
 import Footer from "../Footer/Footer";
 import CountDown from "../CountDown/CountDown";
 import MainInfo from "../MainInfo/MainInfo";
+import FrameInfo from "../Frame/FrameInfo";
 import Whatsapp from "../WhatsApp/Whatsapp";
 import styled from "styled-components"; //css
 
@@ -32,6 +33,7 @@ const Home = ({ isLoggedIn, onLoginSuccess }) => {
           <MainInfo />
           <DetailsContainer id="details" />
           <ProgramsContainer id="program" />
+          <FrameInfo id="frames" />
 
           <Footer />
         </>
