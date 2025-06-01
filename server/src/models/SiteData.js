@@ -17,7 +17,8 @@ const SiteDataSchema = new mongoose.Schema({
     {
       time: { type: String, required: true },
       location_name: { type: String, required: true },
-      prog_location: { type: String, required: true },
+      prog_location_street: { type: String, required: true },
+      prog_location_city: { type: String, required: true },
       activity: { type: String, required: true },
     },
   ],
