@@ -78,10 +78,13 @@ const Login = ({ onLoginSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault(); //stops the page to reload.we dont need that.
     try {
-      const result = await axios.post("http://localhost:3001/auth_user/login", {
-        username,
-        password,
-      });
+      const result = await axios.post(
+        "https://henstagparty-production.up.railway.app/auth_user/login",
+        {
+          username,
+          password,
+        }
+      );
       console.log(result); // Check the response
 
       localStorage.setItem("access_token", result.data.token); // Tárolás localStorage-ban
