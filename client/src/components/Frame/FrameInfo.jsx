@@ -11,8 +11,13 @@ const FrameContainer = styled.div`
   text-align: center;
   margin: 2rem auto;
   width: 90%;
-  max-width: 800px; /* hogy gépen se legyen túl széles */
+  max-width: 990px; /* hogy gépen se legyen túl széles */
   border-radius: 16px;
+`;
+
+const Stilo = styled.a`
+  color: rgba(176, 146, 89, 1);
+  text-decoration: none;
 `;
 
 const InfoRow = styled.div`
@@ -39,18 +44,23 @@ const FrameInfo = ({ id }) => {
           <InfoRow key={index}>
             <div>
               <ul>
-                <li>{item.description}</li>
-                {index === 0 && (
-                  <a href="https://photos.app.goo.gl/cqHWjjBYyJ8UEEyj9">
-                    <button> Drive</button>
-                  </a>
-                )}
-
-                {index === 1 && (
-                  <a href="https://apps.apple.com/br/app/the-frame-camera/id750863887?l=en-GB">
-                    <button>Frame Cam App</button>
-                  </a>
-                )}
+                <li>
+                  {index === 0 || index === 1 ? (
+                    <Stilo
+                      href={
+                        index === 0
+                          ? "https://photos.app.goo.gl/cqHWjjBYyJ8UEEyj9"
+                          : "https://apps.apple.com/br/app/the-frame-camera/id750863887?l=en-GB"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.description}
+                    </Stilo>
+                  ) : (
+                    item.description
+                  )}
+                </li>
               </ul>
             </div>
           </InfoRow>
