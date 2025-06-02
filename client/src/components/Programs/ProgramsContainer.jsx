@@ -1,6 +1,7 @@
 import ProgramCard from "../Programs/ProgramCard";
 import { useData } from "../Context/DataContext";
 import styled from "styled-components"; //css
+import { Timeline, Events, Event } from "vertical-timeline-component-react";
 
 const ProgramsContainer = ({ id }) => {
   const { data } = useData();
