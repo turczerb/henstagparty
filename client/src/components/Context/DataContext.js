@@ -8,7 +8,9 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/data");
+        const response = await fetch(
+          "https://henstagparty-production.up.railway.app/data"
+        );
         const result = await response.json();
         setData(result); // Beállítjuk az adatokat
       } catch (error) {
