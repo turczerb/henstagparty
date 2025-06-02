@@ -9,7 +9,7 @@ import { dataRouter } from "./routes/data.js";
 
 dotenv.config(); // Környezeti változók betöltése
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8080;
 
 app.use(cors()); // CORS engedélyezése
 app.use(express.json()); // JSON body parser middleware
