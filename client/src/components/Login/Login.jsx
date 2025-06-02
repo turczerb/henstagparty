@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { useCookies } from "react-cookie";
+//import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"; //css
 
@@ -57,11 +56,11 @@ const StyledButton = styled.button`
 `;
 
 const Login = ({ onLoginSuccess }) => {
-  const [_, setCookies] = useCookies(["access_token"]);
+  //const [_, setCookies] = useCookies(["access_token"]);
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [isAdmin, setIsAdmin] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 

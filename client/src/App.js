@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DataHandler from "./components/Admin/DataHandler";
 import NavBar from "./components/NavBar/NavBar";
 import { useState, useEffect } from "react";
