@@ -15,9 +15,15 @@ const FirstContainer = styled.div`
   text-align: center;
 
   margin: 2rem auto;
-  width: 90%;
-  max-width: 990px; /* hogy gépen se legyen túl széles */
+  width: 100%;
+  max-width: 800px; /* hogy gépen se legyen túl széles */
   border-radius: 16px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem; /* kisebb padding mobilon */
+    width: 95%; /* hogy ne érjen teljesen a széléig */
+  }
 `;
 
 const ProgramsContainer = ({ id }) => {
