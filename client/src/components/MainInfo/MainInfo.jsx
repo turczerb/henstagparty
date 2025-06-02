@@ -18,11 +18,13 @@ const FirstContainer = styled.div`
   h1 {
     font-size: 2.5rem;
     color: rgba(176, 146, 89, 1);
+    text-align: center;
   }
 
   h2 {
     font-size: 1.5rem;
     color: rgba(176, 146, 89, 1);
+    text-align: center;
   }
 
   button {
