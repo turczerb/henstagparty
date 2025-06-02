@@ -71,9 +71,6 @@ const MainInfo = () => {
       <div>
         <h2>At Balatonfured</h2>
       </div>
-      <div>
-        <button>more details</button>
-      </div>
     </FirstContainer>
   );
 };

@@ -35,7 +35,7 @@ const FrameInfo = ({ id }) => {
   return (
     <FrameContainer id={id}>
       <div>
-        {data[1].frame.map((item, index) => (
+        {data[0].frame.map((item, index) => (
           <InfoRow key={index}>
             <div>
               <ul>
