@@ -1,7 +1,7 @@
+import { Routes, Route } from "react-router-dom";
 import DataHandler from "./components/Admin/DataHandler";
 import NavBar from "./components/NavBar/NavBar";
 import { useState, useEffect } from "react";
-import { useCookies } from "react-cookie";
 import Home from "./components/Home/Home";
 import { DataProvider } from "./components/Context/DataContext";
 import "react-vertical-timeline-component/style.min.css";
@@ -19,7 +19,7 @@ const Hatterkep = styled.div`
 `;
 
 function App() {
-  const [cookies] = useCookies(["access_token"]);
+  //const [cookies] = useCookies(["access_token"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false); //we are not logged in
 
   /* useEffect(() => {

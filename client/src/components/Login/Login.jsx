@@ -83,11 +83,6 @@ const Login = ({ onLoginSuccess }) => {
         password,
       });
       console.log(result); // Check the response
-      // setCookies("access_token", result.data.token);
-      //setCookies("userID", result.data.userID);
-      //setCookies("logged_in", true);
-      //setCookies("isAdmin", result.data.user.isAdmin);
-      //console.log("isAdmin from response:", result.data.isAdmin);
 
       localStorage.setItem("access_token", result.data.token); // Tárolás localStorage-ban
       localStorage.setItem("userID", result.data.userID);

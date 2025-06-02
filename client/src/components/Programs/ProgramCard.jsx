@@ -1,5 +1,5 @@
 import styled from "styled-components"; //css
-import { FaClock, FaMapMarkerAlt, FaGlassCheers } from "react-icons/fa";
+import { FaClock, FaMapMarkerAlt } from "react-icons/fa";
 
 const Text = styled.div`
   color: rgba(176, 146, 89, 1);

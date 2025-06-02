@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"; //css

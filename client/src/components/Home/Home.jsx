@@ -5,7 +5,6 @@ import Footer from "../Footer/Footer";
 import CountDown from "../CountDown/CountDown";
 import MainInfo from "../MainInfo/MainInfo";
 import FrameInfo from "../Frame/FrameInfo";
-import Whatsapp from "../WhatsApp/Whatsapp";
 import styled from "styled-components"; //css
 
 const LoginSurface = styled.div``;
