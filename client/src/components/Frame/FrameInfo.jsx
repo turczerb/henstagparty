@@ -1,5 +1,6 @@
 import { useData } from "../Context/DataContext";
 import styled from "styled-components"; //css
+import { GiClick } from "react-icons/gi";
 
 const FrameContainer = styled.div`
   color: rgba(176, 146, 89, 1);
@@ -18,6 +19,21 @@ const FrameContainer = styled.div`
 const Stilo = styled.a`
   color: rgba(176, 146, 89, 1);
   text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(176, 146, 89, 0.1);
+    color: rgba(120, 90, 40, 1);
+  }
+
+  &:focus,
+  &:active {
+    background-color: rgba(176, 146, 89, 0.2);
+    color: rgba(120, 90, 40, 1);
+    outline: none;
+  }
 `;
 
 const InfoRow = styled.div`
@@ -55,7 +71,8 @@ const FrameInfo = ({ id }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {item.description}
+                      {item.description}{" "}
+                      <GiClick size={14} style={{ marginLeft: "4px" }} />
                     </Stilo>
                   ) : (
                     item.description
