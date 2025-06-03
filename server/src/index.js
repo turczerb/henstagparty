@@ -27,6 +27,3 @@ mongoose
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-//"mongodb+srv://turczerb:fUNQqohhUtKAijll@henparty.bhmh9m3.mongodb.net/henparty?retryWrites=true&w=majority&appName=henparty"
-//ez volt hasznalva  "mongodb+srv://turczerb:fUNQqohhUtKAijll@henparty.bhmh9m3.mongodb.net/henstageapp?retryWrites=true&w=majority&appName=henstageapp"
